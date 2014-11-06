@@ -9,7 +9,7 @@
 <input type="text" ng-model="nbre2" placeholder="0"   ng-init="nbre2 = 0" /><br>
 {{task + " Salut"}}<br>
 
-{{"la somme "+ (nbre1*1 + nbre2*1)}}
+{{"the sum "+ (nbre1*1 + nbre2*1)}}
 
 </body>
 </html>
