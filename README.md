@@ -2,5 +2,4 @@ AngularExample
 ==============
 
 
-Mon objectif de ce référentiel est de vous montrer exemple échantillon de AngularJS. alors vous trouverez la liste de l'exemple
-et le titre de chaque exemple est représente le contenu de cet exemple.
+my Objective of this repository is to show you sample example of AngularJs. then you will find list of example and the title of each example is represent the content of this example.
