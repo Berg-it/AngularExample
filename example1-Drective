@@ -4,32 +4,31 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 </head>
 <body ng-app>
-
-			<!--ng-model-->
-<input type="text" ng-model="task" /><br>
-{{task + " Salut"}}<br><br>
-			<!--ng-init-->
-<input type="text" ng-model="nbre1" placeholder="0"   ng-init="nbre1 = 0" /><br>
-<input type="text" ng-model="nbre2" placeholder="0"   ng-init="nbre2 = 0" /><br>
-{{"the sum "+ (nbre1*1 + nbre2*1)}}<br><br>
-
-			<!--ng-repeat-->
-<div ng-init="users=['Amine','Ahmed','Salem','Fatima','Ousama']">
-	<ul>
-		<li ng-repeat="user in users">{{user}}</li>
-	</ul>
-</div>
-			<!--orderBy-->
-<select ng-model="orderOfTri">
-	<option value='username'>Order by name</option>
-	<option value='content'>Order by content</option>
-</select>
-<div ng-init="listUsers=[{username:'Ahmed',content:'Salut je suis Ahmed.'},
-			 {username:'khlaed',content:'je suis content!'},
-			 {username:'salem',content:'de quoi tu parles?'}]">
-	<ul>
-		<li ng-repeat="userL in listUsers | orderBy : orderOfTri ">{{userL|uppercase}}</li>
-	</ul>
-</div>	
+	<h1>ng-model</h1>
+	<input type="text" ng-model="task" placeholder="Type a message here"/><br>
+	{{task + " Salut"}}<br>
+	<h1>ng-init</h1>
+	<input type="text" ng-model="nbre1"   ng-init="nbre1 = 0" placeholder="0" /><br>
+	<input type="text" ng-model="nbre2"   ng-init="nbre2 = 0" placeholder="0"/><br>
+	{{"the sum "+ (nbre1*1 + nbre2*1)}}<br><br>
+		<h1>ng-repeat and filter</h1>
+	<div ng-init="users=['Amine','Ahmed','Salem','Fatima','Ousama']">
+		<input type="text" ng-model="wordSearch" placeholder="Type a word here"/><br><br>
+		<ul>
+			<li ng-repeat="user in users | filter :wordSearch ">{{user|uppercase}}</li>
+		</ul>
+	</div>
+		<h1>Filter</h1>
+	<select ng-model="orderOfTri">
+		<option value='username'>Order by name</option>
+		<option value='content'>Order by content</option>
+	</select>
+	<div ng-init="listUsers=[{username:'Ahmed',content:'Salut je suis Ahmed.'},
+				 {username:'khlaed',content:'je suis content!'},
+				 {username:'salem',content:'de quoi tu parles?'}]">
+		<ul>
+			<li ng-repeat="userL in listUsers | orderBy : orderOfTri ">{{userL|uppercase}}</li>
+		</ul>
+	</div>	
 </body>
 </html>
