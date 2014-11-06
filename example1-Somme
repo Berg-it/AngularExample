@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body ng-app>
+<input type="text" ng-model="task" /><br>
+<input type="text" ng-model="nbre1" placeholder="0"   ng-init="nbre1 = 0" /><br>
+<input type="text" ng-model="nbre2" placeholder="0"   ng-init="nbre2 = 0" /><br>
+{{task + " Salut"}}<br>
+
+{{"la somme "+ (nbre1*1 + nbre2*1)}}
+
+</body>
+</html>
