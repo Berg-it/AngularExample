@@ -20,7 +20,7 @@
 		</div>					 
 	</div>	
 	
-	<!-->Create a controller to manage the comment system</!-->
+	<%--Create a controller to manage the comment system--%>
 	<script>
 		function CommentCtrl($scope){
 		
