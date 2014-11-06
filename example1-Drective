@@ -19,5 +19,17 @@
 		<li ng-repeat="user in users">{{user}}</li>
 	</ul>
 </div>
+			<!--orderBy-->
+<select ng-model="orderOfTri">
+	<option value='username'>Order by name</option>
+	<option value='content'>Order by content</option>
+</select>
+<div ng-init="listUsers=[{username:'Ahmed',content:'Salut je suis Ahmed.'},
+			 {username:'khlaed',content:'je suis content!'},
+			 {username:'salem',content:'de quoi tu parles?'}]">
+	<ul>
+		<li ng-repeat="userL in listUsers | orderBy : orderOfTri ">{{userL|uppercase}}</li>
+	</ul>
+</div>	
 </body>
 </html>
