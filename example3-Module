@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
+
+<body ng-app='MonApp'>
+
+	<div ng-controller='CommentCtrl'>
+		<h1>ng-model</h1>
+		<input type="text" ng-model="query" placeholder="Type a message here"/><br>
+
+			<h1>Filter</h1>
+		<select ng-model="order">
+			<option value='username'>Order by name</option>
+			<option value='content'>Order by content</option>
+		</select>
+
+		<div ng-repeat="comment in comments | filter :{content:query} |orderBy:order">
+				<p>
+					<strong>{{comment.username}}</strong><br>
+					{{comment.content}}
+				</p>
+			</div>					 
+	</div>	
+	
+	<script>
+	/*<!--Declare your Model -->*/
+	var app = angular.module('MonApp',[])
+	/*<!--Assign Controller to Model -->*/
+	app.controller('CommentCtrl',function($scope){
+
+			$scope.comments = [
+								{
+									"id": 0,
+									"username": "Valerie",
+									"city": "Ypsilanti",
+									"email": "valeriemyers@ultrasure.com",
+									"content": "Eu laboris Lorem in minim do. Adipisicing labore in excepteur dolore commodo duis officia. Sit aliqua aliquip ullamco quis est. Velit eu tempor sint anim id amet. Do et consectetur deserunt laboris labore exercitation. Pariatur consectetur anim consectetur eu aliqua ea Lorem excepteur ut ad. Culpa irure consectetur eu ut laborum irure voluptate anim proident anim officia est. Lorem aute adipisicing et nisi ex do non elit eu esse. Eiusmod non consequat laborum eu Lorem amet. Amet eiusmod minim enim dolore laboris esse officia id ea duis aliqua nulla labore."
+								},
+								{
+									"id": 1,
+									"username": "Mcmillan",
+									"city": "Elfrida",
+									"email": "mcmillanmyers@ultrasure.com",
+									"content": "Et eiusmod voluptate fugiat aliqua id labore ullamco in reprehenderit excepteur. Esse deserunt eu pariatur excepteur labore aliqua ut. Incididunt labore proident labore id non nostrud deserunt nulla nostrud officia reprehenderit exercitation veniam. Duis irure aliquip magna in ut aute velit occaecat laboris veniam duis cupidatat id. Veniam veniam reprehenderit reprehenderit et do consectetur laborum pariatur incididunt ut et laborum labore est. Et duis id adipisicing fugiat. Elit sunt quis enim qui reprehenderit. Aliquip eiusmod exercitation ex non voluptate ullamco laborum proident ullamco cupidatat pariatur. Id nulla anim culpa adipisicing aute consectetur sint anim officia dolor nisi enim magna. Magna veniam commodo irure velit qui occaecat consectetur irure nisi culpa ullamco irure."
+								},
+								{
+									"id": 2,
+									"username": "Bonner",
+									"city": "Bascom",
+									"email": "bonnermyers@ultrasure.com",
+									"content": "Ullamco consequat pariatur cillum laboris dolor. Deserunt laboris dolore pariatur Lorem voluptate. Cupidatat irure commodo elit ipsum est deserunt voluptate dolore esse do commodo minim dolor. Id irure duis nostrud eiusmod incididunt non voluptate magna magna nisi amet minim Lorem. Ad cillum minim non non exercitation excepteur magna veniam consectetur commodo eu voluptate. Tempor id culpa ex sit. Ipsum quis dolore cupidatat consectetur voluptate consectetur laborum ex ea dolore consequat minim tempor. Qui fugiat duis nostrud officia proident laboris. Et tempor ea eiusmod sunt. Magna minim do aute mollit cupidatat dolore sit velit."
+								},
+								{
+									"id": 3,
+									"username": "Anthony",
+									"city": "Glasgow",
+									"email": "anthonymyers@ultrasure.com",
+									"content": "Duis aliqua nulla adipisicing eiusmod anim mollit dolore. Lorem ea esse magna veniam qui ipsum dolor sunt est et consectetur commodo sit. Pariatur Lorem voluptate proident officia sit ipsum proident id reprehenderit qui. Quis id eu fugiat velit ullamco ullamco reprehenderit cupidatat officia enim excepteur magna. Irure fugiat qui adipisicing duis veniam ut minim reprehenderit nulla. Culpa voluptate nisi commodo Lorem veniam aliqua in est magna et sunt. Consequat incididunt aute proident qui labore anim veniam in duis ullamco occaecat tempor voluptate. Aliquip sint id magna adipisicing culpa sint est commodo nulla Lorem nostrud. Aliquip commodo voluptate quis incididunt culpa amet amet Lorem minim mollit cupidatat irure commodo ullamco. Ullamco proident eiusmod ut pariatur velit."
+								},
+								{
+									"id": 4,
+									"username": "Franco",
+									"city": "Fannett",
+									"email": "francomyers@ultrasure.com",
+									"content": "Aliqua magna laboris id do exercitation incididunt est aliqua qui. Sint nostrud aute aliquip velit deserunt proident cillum magna tempor cupidatat. Aute ipsum sit labore quis. Culpa do aliqua irure incididunt laborum magna veniam veniam sint. Sit sint fugiat et nulla duis excepteur anim cillum reprehenderit nostrud id consequat aute. Officia ea minim incididunt minim voluptate aliqua adipisicing aute Lorem. Aliqua commodo Lorem sunt deserunt ad exercitation sint cupidatat proident id excepteur officia id non. Ipsum aute do officia nulla magna occaecat adipisicing tempor dolor qui. Pariatur eiusmod deserunt pariatur magna est cupidatat aute id laboris anim Lorem veniam sit ea. Do deserunt consectetur nostrud ex voluptate sunt et nisi ex."
+								},
+								{
+									"id": 5,
+									"username": "Tucker",
+									"city": "Hiko",
+									"email": "tuckermyers@ultrasure.com",
+									"content": "Ex consequat excepteur est deserunt cupidatat ipsum et tempor nostrud in ad labore eu. Cupidatat in exercitation commodo labore ut eu culpa consectetur consectetur Lorem non. Dolor elit amet amet labore qui nisi ipsum consequat proident. Consectetur tempor laborum id commodo consequat deserunt est laboris. Aute nisi labore non pariatur do officia id. Ut non occaecat mollit consequat dolore incididunt adipisicing eiusmod enim nulla est occaecat. Elit nostrud incididunt reprehenderit laboris reprehenderit nulla labore laboris consectetur. Officia anim incididunt minim do amet velit incididunt sit voluptate sint exercitation. Adipisicing labore exercitation nostrud ad proident do reprehenderit ipsum qui ullamco qui aute. Dolore cillum velit eiusmod minim veniam eu excepteur."
+								},
+								{
+									"id": 6,
+									"username": "Cecilia",
+									"city": "Highland",
+									"email": "ceciliamyers@ultrasure.com",
+									"content": "Laboris nulla consectetur fugiat do mollit veniam occaecat. Mollit nisi aliquip officia cillum est duis commodo. Occaecat exercitation commodo magna do sint dolore ut nisi non irure ea quis aliquip non. Minim nostrud aliqua ut est incididunt voluptate elit tempor et incididunt pariatur ad. Et ut ullamco anim ipsum ut est ipsum cupidatat excepteur sint cupidatat ullamco minim enim. Voluptate mollit esse reprehenderit nulla nulla aliqua fugiat ullamco eiusmod duis. Fugiat Lorem cupidatat commodo incididunt do commodo anim in. Reprehenderit deserunt do culpa occaecat enim non est et excepteur ex nulla esse est cillum. Velit nulla quis cupidatat aliquip adipisicing velit cupidatat esse et nisi in et. Mollit nulla veniam aliqua irure laborum non cupidatat enim."
+								}
+						  ];
+		
+		});
+	</script>
+
+</body>
+</html>
